@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-do-list app</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <main>
+        <div class="app">
+            <div class="app-newTask">
+                <div class="addTaskField-container">
+                    <label for="addTaskField">Add a new Task</label>
+                    <input type="text" name="addTaskField" id="addTaskField">
+                </div>
+                <button id="addTaskButton" class="appButton addTaskButton">Add</button>
+            </div>
+            <div class="app-listOfTasks">
+                <ul class="toDoList" id="toDolist">
+                    <li class="toDoList-item">
+                        <h3 class="task"></h3>
+                        <button class="removeTaskButton" class="appButton removeTaskButton"></button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
