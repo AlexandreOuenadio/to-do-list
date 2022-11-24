@@ -1,31 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To-do-list app</title>
-    <link rel="stylesheet" href="index.css">
-</head>
-<body>
-    <main>
-        <div class="app">
-            <div class="app-newTask">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>To-do-list app</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <main>
+            <div class="app">
                 <div class="addTaskField-container">
-                    <label for="addTaskField">Add a new Task</label>
-                    <input type="text" name="addTaskField" id="addTaskField">
+                    <label for="addTaskField" class="addTaskField-label">Add a new Task</label>
+                    <input type="text" name="addTaskField" id="addTaskField" class="addTaskField"> 
+                    <button id="addTaskFieldButton" class="appButton addTaskFieldButton">Add new task</button>
                 </div>
-                <button id="addTaskButton" class="appButton addTaskButton">Add</button>
+                <div class="app-listOfTasks">
+                    <ul class="toDoList" id="toDolist">
+                        <li class="toDoList-item">
+                            <h3 class="task"></h3>
+                            <button class="removeTaskButton" class="appButton removeTaskButton"></button>
+                        </li>
+                    </ul>
+                </div>
             </div>
-            <div class="app-listOfTasks">
-                <ul class="toDoList" id="toDolist">
-                    <li class="toDoList-item">
-                        <h3 class="task"></h3>
-                        <button class="removeTaskButton" class="appButton removeTaskButton"></button>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </main>
-</body>
+        </main>
+    </body>
 </html>
