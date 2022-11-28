@@ -36,6 +36,7 @@ main{
 .addTaskField{
    margin-left: auto;
    margin-right: 10px; 
+   padding: 0.5em;
 }
 .addTaskField-label{
     font-weight: 700;
@@ -45,7 +46,7 @@ main{
 .appButton{
     cursor: pointer;
     font-weight: 600;
-    padding: 2px 10px;
+    padding: 0.5em 10px;
     border-radius: 5px;
     border: none;
 }
@@ -53,3 +54,4 @@ main{
     background-color: #4cc9f0;
     color: white;
 }
+
