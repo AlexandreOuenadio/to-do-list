@@ -3,7 +3,7 @@ const submitBtn = document.getElementById("submitBtn");
 const inputField = document.getElementById("inputField");
 const emptyMessage = document.getElementById("emptyMessage");
 
-let listCount = 0; //the first element is the example
+let listCount = 0;
 
 
 function createTask(p_text){
