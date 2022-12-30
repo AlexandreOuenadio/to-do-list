@@ -1,8 +1,9 @@
 const taskList = document.getElementById("taskList");
 const submitBtn = document.getElementById("submitBtn");
 const inputField = document.getElementById("inputField");
+const emptyMessage = document.getElementById("emptyMessage");
 
-let listCount = 1; //the first element is the example
+let listCount = 0; //the first element is the example
 
 
 function createTask(p_text){
@@ -23,11 +24,13 @@ function createTask(p_text){
 
     const deleteTaskBtn = document.createElement("button");
     deleteTaskBtn.classList.add("deleteBtn");
+    deleteTaskBtn.addEventListener("click", removeTaskFromList);
 
     const iconDeleteTaskBtn = document.createElement("i");
     iconDeleteTaskBtn.classList.add("fa-solid", "fa-trash");
 
     deleteTaskBtn.appendChild(iconDeleteTaskBtn);
+
 
     taskItem.appendChild(task);
     taskItem.appendChild(deleteTaskBtn);
@@ -36,23 +39,38 @@ function createTask(p_text){
 
 }
 function addTaskToList(p_taskItem){
+    emptyMessage.classList.remove("empty-message--active");
     taskList.appendChild(p_taskItem);
 }
-function removeTaskFromList(p_itemId){
-
+function removeTaskFromList(e){
+    e.preventDefault();
+    listCount--;
+    taskList.removeChild(e.target.parentNode.parentNode);
+    if (listCount === 0){
+        emptyMessage.classList.add("empty-message--active");
+    }
+    
 }
 
+inputField.addEventListener("keydown", (e) =>{
+    if (e.key == "Enter"){
+        e.preventDefault();
+        submitBtn.click();
+    }
+    
+})
 
 submitBtn.addEventListener("click", (e)=>{
 
     e.preventDefault();
     
     const taskText = inputField.value;
-
-    taskItem = createTask(taskText);
-    addTaskToList(taskItem);
-
-    inputField.value = "";
+    if (taskText != ""){
+        taskItem = createTask(taskText);
+        addTaskToList(taskItem);
+        inputField.value = "";
+    }
+    
 
 
 })

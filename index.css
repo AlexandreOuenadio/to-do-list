@@ -10,7 +10,7 @@
 body{
     background-color: #dee2e6;
     font-family: Poppins, sans-serif;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -20,10 +20,10 @@ body{
 
 .app{
     background-color: white;
-    min-height: 300px;
-    width: 500px;
+    width: 600px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;;
     padding: 20px;
+    max-height: 500px;
 
 }
 
@@ -72,6 +72,9 @@ body{
 .task-list{
     display: flex;
     flex-direction: column;
+    max-height: 300px;
+    overflow-y: scroll;
+
 
 }
 
@@ -80,7 +83,8 @@ body{
     background-color: #dee2e6;
     padding: 0.5em 20px;
     margin-bottom: 10px;
-    overflow: hidden;
+    height: 50px;
+    align-items: center;
 }
 
 .task{
@@ -109,4 +113,16 @@ body{
 }
 .deleteBtn:hover{
     color: #dc2f02;
+}
+
+.empty-message{
+    display: none;
+    color: #6c757d;
+    font-size: 1em;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.empty-message--active{
+    display: block;
 }
