@@ -11,7 +11,6 @@ function createTask(p_text){
     listCount++;
 
     const taskItem = document.createElement("li");
-    taskItem.id = `task-${listCount}`;
     taskItem.classList.add("task-item");
 
     const task = document.createElement("p");
@@ -19,12 +18,13 @@ function createTask(p_text){
     task.textContent = p_text;
     task.addEventListener("click",(e) =>{
         e.preventDefault();
+        e.stopPropagation();
         task.classList.toggle("task-crossed");
     })
 
     const deleteTaskBtn = document.createElement("button");
     deleteTaskBtn.classList.add("deleteBtn");
-    deleteTaskBtn.addEventListener("click", removeTaskFromList);
+    deleteTaskBtn.addEventListener("click", (e) => removeTaskFromList(taskItem));
 
     const iconDeleteTaskBtn = document.createElement("i");
     iconDeleteTaskBtn.classList.add("fa-solid", "fa-trash");
@@ -42,10 +42,9 @@ function addTaskToList(p_taskItem){
     emptyMessage.classList.remove("empty-message--active");
     taskList.appendChild(p_taskItem);
 }
-function removeTaskFromList(e){
-    e.preventDefault();
+function removeTaskFromList(p_taskItem){
+    p_taskItem.remove();
     listCount--;
-    taskList.removeChild(e.target.parentNode.parentNode);
     if (listCount === 0){
         emptyMessage.classList.add("empty-message--active");
     }
@@ -63,6 +62,7 @@ inputField.addEventListener("keydown", (e) =>{
 submitBtn.addEventListener("click", (e)=>{
 
     e.preventDefault();
+    e.stopPropagation();
     
     const taskText = inputField.value;
     if (taskText != ""){
