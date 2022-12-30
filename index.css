@@ -21,9 +21,9 @@ body{
 .app{
     background-color: white;
     min-height: 300px;
-    width: 400px;
+    width: 500px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;;
-    padding: 0 20px;
+    padding: 20px;
 
 }
 
@@ -83,31 +83,30 @@ body{
     overflow: hidden;
 }
 
-.task-item:hover > .deleteBtn{
-    transform: translateX(0);
-    opacity: 1;
-}
 .task{
     color: black;
     cursor: pointer;
+    font-size: 1em;
 }
 .task:hover{
     text-decoration: line-through;
     font-style: italic;
     color: #6c757d;
 }
+.task-crossed{
+    text-decoration: line-through;
+    font-style: italic;
+    color: #6c757d;
+}
+
 .deleteBtn{
     color: #343a40;
-    transform: translateX(20px);
-    transition: transform .2s;
-    opacity: 0;
     cursor: pointer;
     font-size: 1em;
     border: none;
     margin-left: auto;
     background-color: transparent;
 }
-.task-crossed{
-    text-decoration: line-through;
-    font-style: italic;
+.deleteBtn:hover{
+    color: #dc2f02;
 }
